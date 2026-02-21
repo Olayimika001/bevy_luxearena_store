@@ -38,7 +38,7 @@
       <p class="text-base font-semibold text-gray-900 mt-1">
         ₦{{ formattedPrice }}
       </p>
-      <div class="grid grid-cols-2 gap-2 mt-3 mt-auto pt-2">
+      <div class="mt-3 mt-auto pt-2">
         <button
           type="button"
           class="bg-brandGreen text-white text-xs sm:text-sm font-medium py-2 sm:py-2.5 px-2 sm:px-3 rounded-md hover:opacity-90 transition w-full"
@@ -47,12 +47,6 @@
         >
           Add to Cart
         </button>
-        <router-link
-          :to="productLink"
-          class="bg-brandGreen text-white text-xs sm:text-sm font-medium py-2 sm:py-2.5 px-2 sm:px-3 rounded-md hover:opacity-90 transition w-full text-center flex items-center justify-center"
-        >
-          Select options
-        </router-link>
       </div>
     </div>
   </article>

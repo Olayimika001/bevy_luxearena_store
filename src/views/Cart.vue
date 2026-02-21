@@ -18,7 +18,18 @@
             :key="item.id"
             class="py-4 flex flex-col sm:flex-row gap-4 sm:items-center"
           >
+            <template v-if="cartItemProduct(item)?.video">
+              <video
+                :src="cartItemProduct(item).video"
+                :poster="cartItemImage(item)"
+                muted
+                loop
+                playsinline
+                class="w-24 h-24 object-cover rounded-lg flex-shrink-0 bg-gray-100"
+              />
+            </template>
             <img
+              v-else
               :src="cartItemImage(item)"
               :alt="item.name"
               class="w-24 h-24 object-cover rounded-lg flex-shrink-0 bg-gray-100"
@@ -80,8 +91,12 @@ const subtotal = computed(() =>
   )
 )
 
+function cartItemProduct(item) {
+  return getProductById(item.id)
+}
+
 function cartItemImage(item) {
-  const product = getProductById(item.id)
+  const product = cartItemProduct(item)
   const src = (product && product.image) || item.image
   return typeof src === 'string' && src ? src : '/leather handbag.jpeg'
 }
