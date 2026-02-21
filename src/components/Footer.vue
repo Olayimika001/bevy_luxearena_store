@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8">
         <div>
-          <img src="/Logo.png" alt="bevy_luxearena" class="h-16 sm:h-20 w-auto mb-2 sm:mb-4" />
+          <img :src="logoUrl" alt="bevy_luxearena" class="h-16 sm:h-20 w-auto mb-2 sm:mb-4" />
           <p class="text-xs sm:text-sm text-gray-300">Crafted with care, designed for elegance.</p>
         </div>
         <div>
@@ -47,6 +47,7 @@
 
 <script setup>
 import { computed } from 'vue'
+import logoUrl from '../assets/Logo.png'
 
 const currentYear = computed(() => new Date().getFullYear())
 </script>

@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="py-3 sm:py-4 flex items-center justify-between gap-3 sm:gap-6">
         <router-link to="/" class="flex items-center flex-shrink-0">
-          <img src="/Logo.png" alt="bevy_luxearena" class="h-16 sm:h-20 w-auto" />
+          <img :src="logoUrl" alt="bevy_luxearena" class="h-16 sm:h-20 w-auto" />
         </router-link>
 
         <div class="hidden md:flex flex-grow max-w-md">
@@ -117,6 +117,7 @@
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useStore } from '../composables/useStore'
+import logoUrl from '../assets/Logo.png'
 
 const router = useRouter()
 const mobileMenuOpen = ref(false)
